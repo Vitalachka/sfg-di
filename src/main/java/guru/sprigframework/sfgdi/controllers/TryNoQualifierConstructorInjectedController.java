@@ -4,17 +4,14 @@ import guru.sprigframework.sfgdi.Services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class MyController {
-
+public class TryNoQualifierConstructorInjectedController {
     private final GreetingService greetingService;
 
-    public MyController(GreetingService greetingService) {
+    public TryNoQualifierConstructorInjectedController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
-    public String sayHelloWorld(){
-        //System.out.println("Hi Hi! from My Controller sout");
-        //return "Hi! from My Controller return";
+    public String getGreeting(){
         return greetingService.sayGreeting();
     }
 }
